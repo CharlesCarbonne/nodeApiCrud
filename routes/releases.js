@@ -66,8 +66,8 @@ app.post('/add', function(req, res, next){
 					title: 'Add New Release',
 					bandName: release.bandName,
 					releaseTitle: release.releaseTitle,
-					year: release.year
-					country: release.country					
+					year: release.year,
+					country: release.country,					
 					format: release.format					
 				})
 
