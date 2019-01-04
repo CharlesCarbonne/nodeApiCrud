@@ -52,7 +52,7 @@ app.post('/add', function(req, res, next){
 		var release = {
 			bandName: req.sanitize('bandName').toString().toUpperCase(),
 			releaseTitle: req.sanitize('releaseTitle'),
-			year: req.sanitize('email').escape().trim(),
+			year: req.sanitize('year').escape().trim(),
 			country: req.sanitize('country').escape().trim(),
 			format: req.sanitize('format').escape().trim()
 		}
@@ -151,7 +151,7 @@ app.put('/edit/(:id)', function(req, res, next) {
 		var release = {
 			bandName: req.sanitize('bandName').toString().toUpperCase(),
 			releaseTitle: req.sanitize('releaseTitle'),
-			year: req.sanitize('email').escape().trim(),
+			year: req.sanitize('year').escape().trim(),
 			country: req.sanitize('country').escape().trim(),
 			format: req.sanitize('format').escape().trim()
 		}
