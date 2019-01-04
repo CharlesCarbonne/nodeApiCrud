@@ -49,7 +49,7 @@ app.post('/add', function(req, res, next){
     
     if( !errors ) {   //No errors were found.  Passed Validation!
 		
-		var release
+		var release = {
 			bandName: req.sanitize('bandName'),
 			releaseTitle: req.sanitize('releaseTitle'),
 			year: req.sanitize('email').escape().trim(),
@@ -148,7 +148,7 @@ app.put('/edit/(:id)', function(req, res, next) {
     
     if( !errors ) {   //No errors were found.  Passed Validation!
 		
-		var release
+		var release = {
 			bandName: req.sanitize('bandName'),
 			releaseTitle: req.sanitize('releaseTitle'),
 			year: req.sanitize('email').escape().trim(),
