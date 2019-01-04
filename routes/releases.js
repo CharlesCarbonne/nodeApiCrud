@@ -50,7 +50,7 @@ app.post('/add', function(req, res, next){
     if( !errors ) {   //No errors were found.  Passed Validation!
 		
 		var release = {
-			bandName: req.sanitize('bandName').toUpperCase(),
+			bandName: req.sanitize('bandName').toString().toUpperCase(),
 			releaseTitle: req.sanitize('releaseTitle'),
 			year: req.sanitize('email').escape().trim(),
 			country: req.sanitize('country').escape().trim(),
@@ -149,7 +149,7 @@ app.put('/edit/(:id)', function(req, res, next) {
     if( !errors ) {   //No errors were found.  Passed Validation!
 		
 		var release = {
-			bandName: req.sanitize('bandName').toUpperCase(),
+			bandName: req.sanitize('bandName').toString().toUpperCase(),
 			releaseTitle: req.sanitize('releaseTitle'),
 			year: req.sanitize('email').escape().trim(),
 			country: req.sanitize('country').escape().trim(),
