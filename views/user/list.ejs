@@ -14,29 +14,33 @@ including header content which is common for all pages
 <table width='80%' border=0>
 
 	<tr style='text-align:left; background-color:#CCC'>
-		<th>Name</th>
-		<th>Age</th>
-		<th>Email</th>
+		<th>Groupe</th>
+		<th>Titre</th>
+		<th>Année</th>
+		<th>Pays</th>
+		<th>Format</th>
 		<th>Action</th>
 	</tr>
 	
 	<!--
-		Using FOREACH LOOP for the users array
+		Using FOREACH LOOP for the releases array
 		
 		myArray.forEach(function(el, index) {
 			// el - current element, i - index
 		});
 	-->
 	<% if (data) { %>
-	<% data.forEach(function(user){ %>
+	<% data.forEach(function(release){ %>
 		<tr>
-			<td><%= user.name %></td>
-			<td><%= user.age %></td>
-			<td><%= user.email %></td>
+			<td><%= release.bandName %></td>
+			<td><%= release.releaseTitle %></td>
+			<td><%= release.year %></td>
+			<td><%= release.country %></td>
+			<td><%= release.format %></td>
 			<td>
 				<div style="float:left">
-					<a href='/users/edit/<%= user._id %>'>Edit</a> &nbsp;							
-					<form method="post" action="/users/delete/<%= user._id %>" style="float:right">
+					<a href='/releases/edit/<%= release._id %>'>Edit</a> &nbsp;							
+					<form method="post" action="/releases/delete/<%= release._id %>" style="float:right">
 						<input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
 						<input type="hidden" name="_method" value="DELETE" />
 					</form>
@@ -52,3 +56,9 @@ including header content which is common for all pages
 including footer content which is common for all pages
 -->
 <%- include ../layouts/footer.ejs %>
+
+           bandName: req.body.bandName,
+            releaseTitle: req.body.releaseTitle,
+            year: req.body.year,
+            country: req.body.country,
+            format: req.body.format,
