@@ -52,9 +52,9 @@ app.post('/add', function(req, res, next){
 		var release = {
 			bandName: req.sanitize('bandName').toString().toUpperCase(),
 			releaseTitle: req.sanitize('releaseTitle'),
-			year: req.sanitize('year').escape().trim(),
-			country: req.sanitize('country').escape().trim(),
-			format: req.sanitize('format').escape().trim()
+			year: req.sanitize('year').escape(),
+			country: req.sanitize('country').escape(),
+			format: req.sanitize('format').escape()
 		}
 				 
 		req.db.collection('releases').insert(release, function(err, result) {
@@ -151,9 +151,9 @@ app.put('/edit/(:id)', function(req, res, next) {
 		var release = {
 			bandName: req.sanitize('bandName').toString().toUpperCase(),
 			releaseTitle: req.sanitize('releaseTitle'),
-			year: req.sanitize('year').escape().trim(),
-			country: req.sanitize('country').escape().trim(),
-			format: req.sanitize('format').escape().trim()
+			year: req.sanitize('year').escape(),
+			country: req.sanitize('country').escape(),
+			format: req.sanitize('format').escape()
 		}
 
 		var o_id = new ObjectId(req.params.id)
