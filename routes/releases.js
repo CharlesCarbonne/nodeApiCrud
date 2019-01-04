@@ -88,16 +88,18 @@ app.post('/add', function(req, res, next){
 		})		
 	}
 	else {   //Display errors to user
+
+				/**
 		var error_msg = ''
 		errors.forEach(function(error) {
 			error_msg += error.msg + '<br>'
 		})				
 		req.flash('error', error_msg)		
 		
-		/**
+
 		 * Using req.body.name 
 		 * because req.param('name') is deprecated
-		 */ 
+
         res.render('release/add', { 
             title: 'Add New User',
             bandName: req.body.bandName,
@@ -106,6 +108,7 @@ app.post('/add', function(req, res, next){
             country: req.body.country,
             format: req.body.format,
         })
+        		 */ 
     }
 })
 
